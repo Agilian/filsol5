@@ -1,0 +1,473 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background-color: #FFFFFF;
+    margin: 0;
+}
+
+#f1 {
+    position: absolute;
+    left: 100px;
+    opacity: 0.1;
+    z-index: -2;
+}
+
+#anderson {
+    position: absolute;
+    top: 10px;
+}
+
+#cabecario {
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -37%;
+    z-index: 0;
+    padding: 50px;
+}
+
+#fundo {
+    background-color: #3da7cceb;
+    top: 200px;
+    height: 350px;
+    z-index: 9999;
+}
+
+#fundo2 {
+    background-color: #488b85;
+    padding-top: 50px;
+    z-index: 900;
+    display: none;
+}
+
+#indice {
+    width: 400px;
+    height: 50px;
+    position: absolute;
+    left: 60%;
+    top: 90%;
+    z-index: 99;
+    opacity: 0.8;
+}
+
+#fundoOCULTO {
+    display: none;
+}
+
+#altura,
+#largura,
+#bt,
+#cor,
+#quantidade,
+#espessura {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(53 109 104);
+    border-radius: 12px;
+    border: none;
+}
+
+#altura {
+    float: inherit;
+    left: 548px;
+    top: 30px;
+    text-align: center;
+    align-items: center
+}
+
+#largura {
+    padding-left: 5px;
+    left: 626px;
+    top: 102px;
+    text-align: center;
+}
+
+#lab_quant {
+    left: 410px;
+    top: 55px;
+    color: #e5e5e5;
+}
+
+#quantidade {
+    left: 450px;
+    top: 50px;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+
+#lab_cor {
+    left: 730px;
+    top: 42px;
+    color: #e5e5e5;
+}
+
+#cor {
+    left: 800px;
+    top: 37px;
+}
+
+#lab_alum {
+    left: 730px;
+    top: 77px;
+    color: #e5e5e5;
+}
+
+#aluminio {
+    left: 800px;
+    top: 75px;
+    background-color: lightslategrey;
+    width: 125px;
+}
+
+#lab_subtotal {
+    left: 1000px;
+    top: 67px;
+    color: #e5e5e5;
+}
+
+#Total {
+    left: 1080px;
+    top: 50px;
+    text-align: center;
+}
+
+#lab_espess {
+    left: 730px;
+    top: 108px;
+    color: #e5e5e5;
+}
+
+#espessura {
+    left: 800px;
+    top: 102px;
+    text-align: center;
+}
+
+#SubTotal {
+    left: 800px;
+    top: 170px;
+    display: none;
+}
+
+#ok {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #3a7938;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 92px;
+    margin-top: 8px;
+    border: 0px solid #6c86a1;
+    position: fixed;
+    bottom: 15px;
+    right: 152px;
+    z-index: 100;
+    width: 75px;
+    height: 75px;
+}
+
+#precoVidro,
+#precoDiversos,
+#precoFerro,
+#precokit,
+#Total,
+#xFator,
+#xDiversos,
+#xFerro,
+#xKit,
+#yCor {
+    width: 70px;
+    height: 50px;
+}
+
+#idCliente,
+#idEndereco,
+#idBairro,
+#idCidade,
+#idTelefone,
+#idCelular,
+#idEmail,
+#idData,
+#idPedido {
+    z-index: 10;
+    font-size: 9px;
+}
+
+#yCor {
+    display: none;
+}
+
+#btt1 {
+    padding-left: 5px;
+    width: 100px;
+    height: 90px;
+}
+
+#cor {
+    background-image: url("../img/v01.png");
+    background-repeat: no-repeat;
+}
+
+#CONTROLES {
+    margin-left: 11%;
+    width: 100%;
+    height: 40%;
+    z-index: 0;
+    font-size: 17px;
+    padding-top: 17px;
+}
+
+#SOMA {
+    display: none;
+}
+
+#itens {
+    position: relative;
+    width: 500px;
+    height: 100px;
+    left: 50%;
+    margin-left: -42%;
+    top: 185px;
+}
+
+#itensFabrica {
+    position: relative;
+    width: 500px;
+    height: 100px;
+    left: 50%;
+    margin-left: -42%;
+    top: 40px;
+}
+
+.datas {
+    /*	position: relative;*/
+    width: 70px;
+    height: 25px;
+    z-index: 999;
+}
+
+table td {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+}
+
+#minhaTabela {
+    border: "1px";
+}
+
+#ander {
+    z-index: 0;
+}
+
+#fimfim {
+    position: fixed;
+    bottom: 56%;
+    right: 15px;
+    z-index: 100;
+    background-image: url(../img/fim.png);
+    background-size: contain;
+    background-color: #924545ab;
+    background-position-x: center;
+    border: none;
+    width: 51px;
+    background-repeat: no-repeat;
+    font-size: 2rem;
+    border-radius: 83px;
+    border-bottom-style: outset;
+}
+
+#imgConfigVidracaria {
+    position: fixed;
+    bottom: 76%;
+    right: 15px;
+    z-index: 100;
+    background-image: url(../img/maisbox.png);
+    background-size: contain;
+    background-color: #924545ab;
+    background-position-x: center;
+    border: none;
+    width: 51px;
+    background-repeat: no-repeat;
+    font-size: 2rem;
+    border-radius: 83px;
+    border-bottom-style: outset;
+}
+
+#imgconfig {
+    position: fixed;
+    bottom: 66%;
+    right: 15px;
+    z-index: 100;
+    background-image: url(../img/config.png);
+    BACKGROUND-COLOR: #227d80bd;
+    background-size: contain;
+    background-size: 136%;
+    background-position-x: center;
+    background-position-y: center;
+    border-style: initial;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    font-size: 2rem;
+    border-radius: 97px;
+    border-bottom-style: outset;
+}
+
+#divConfiguracaoSistema {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+    margin-top: 8px;
+    border: 0px solid rgb(108, 134, 161);
+    background-color: rgb(179, 174, 35, 88%);
+    position: fixed;
+    bottom: 13%;
+    right: 78px;
+    z-index: 100;
+    width: 93%;
+    visibility: hidden;
+    height: 82%;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#divUsuario {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+    margin-top: 8px;
+    border: 0px solid rgb(108, 134, 161);
+    background-color: rgb(80, 90, 90, 88%);
+    position: fixed;
+    bottom: 49%;
+    right: 78px;
+    z-index: 100;
+    width: 50%;
+    visibility: hidden;
+    height: 42%;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+#divFIMFIM {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    color: whitesmoke;
+    border-radius: 10px;
+    margin-top: 8px;
+    border: 0px solid rgb(108, 134, 161);
+    background-color: rgba(84, 148, 89, 0.93);
+    position: fixed;
+    bottom: 154px;
+    right: 78px;
+    z-index: 100;
+    width: 55%;
+    visibility: hidden;
+    height: 325px;
+    padding-left: 35px;
+}
+
+.btn_print {
+    border: 1px solid #dddddd;
+    background: #3da7cceb;
+    margin-left: -0%;
+    height: 250px;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+    left: 0%;
+    opacity: 96%;
+}
+
+.classeMenuzinhoDeAbas {
+    background-color: #3d93b1eb;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.fundoAbasConteudo {
+    visibility: hidden;
+    position: absolute;
+    margin-left: 18%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 25px;
+    width: 63%;
+}
+
+.main_menu {
+    /*	position:relative;*/
+    /*	margin:400px auto;*/
+    height: 55px;
+    text-align: center;
+    /*cursor:pointer;*/
+    position: fixed;
+    top: 0;
+    width: 100px;
+    z-index: 999;
+}
+
+button.css3button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #141114;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: -moz-linear-gradient( top, #a5b0b8 0%, #a5b0b8);
+    background: -webkit-gradient( linear, left top, left bottom, from(#a5b0b8), to(#a5b0b8));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 8px;
+    border: 0px solid #6c86a1;
+}
+
+@media print {
+    .btn_print {
+        display: none;
+    }
+    #imgConfig,
+    #imgConfigVidracaria,
+    #fimfim,
+    #ok,
+    #btSair {
+        visibility: hidden;
+        ;
+    }
+    #cabecario {
+        left: 0;
+        margin-left: 150px;
+        margin-top: 50px;
+    }
+    #itens {
+        margin-top: 50px;
+    }
+    .form-control {
+        border: none;
+    }
+    .input-group-addon {
+        font-weight: lighter;
+        width: 100px;
+        font-size: 11px;
+    }
+    #plus {
+        display: none;
+    }
+}
+
+.ui-datepicker {
+    position: relative;
+    z-index: 9000;
+}
