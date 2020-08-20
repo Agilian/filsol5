@@ -1,15 +1,14 @@
 
 
 function segueSite1() {
-console.log("oi1");
-window.location.href = "https://filsol.herokuapp.com/public/valvulas-codigos";
+    window.location.href = "https://filsol.herokuapp.com/public/calculador-de-pallets-gerador-de-of";
 }
 
 function segueSite2() {
-    console.log("oi2");
+    window.location.href = "https://filsol.herokuapp.com/public/calculador-de-pallets-simples";
 }
 
 function segueSite3() {
-    console.log("oi3");
+    window.location.href = "https://filsol.herokuapp.com/public/valvulas-codigos";
 }
         
