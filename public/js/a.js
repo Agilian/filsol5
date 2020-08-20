@@ -24,11 +24,11 @@ function destaque3() {
 }
 
 function tiraDestaque1() {
-    document.getElementById("site1").style.backgroundColor = "gray";
+    document.getElementById("site1").style.backgroundColor = "3c3c3c";
 }
 function tiraDestaque2() {
-    document.getElementById("site2").style.backgroundColor = "gray";
+    document.getElementById("site2").style.backgroundColor = "3c3c3c";
 }
 function tiraDestaque3() {
-    document.getElementById("site3").style.backgroundColor = "gray";
+    document.getElementById("site3").style.backgroundColor = "3c3c3c";
 }
