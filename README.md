@@ -19,4 +19,4 @@ ou pode ser visto funcionando online aqui:
 
 ### Aos desenvolvedores
 
-o site on line está conectado com o git Hub, então as alterações serão automáticamente transferidas pra versão online. Prudência, grato.
+o site on line está conectado com o git Hub, então as alterações serão automáticamente transferidas pra versão online.
