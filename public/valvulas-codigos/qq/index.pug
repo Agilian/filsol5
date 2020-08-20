@@ -1,0 +1,15 @@
+.wrapper.typo
+  | This is a custom
+  div.list
+    span.placeholder select
+    
+    ul.list__ul
+      each item in ['select', 'lorem', 'ipsum', 'dolor', 'sit', 'amet']
+        li: a(href="")= item
+  
+  //
+    .select
+      select.typo
+        - each item in ['lorem', 'ipsum', 'dolor', 'sit', 'amet']
+          option.typo #{item}
+    

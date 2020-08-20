@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8"/>
+			<title>Document</title>
+			<link rel="stylesheet" href="css/style.css" type="text/css">
+			<script src="js/script.js"></script>
+		</head>
+		
+		<body>
+
+			<div class="container">
+			  <form action="#" class="form-contact" method="post" tabindex="1">
+			  	<br /><br /><br /><br /><br />
+				<h1>
+					
+					VÁLVULAS AUTEL
+				</h1>
+				<br /><br /><br />
+				<input type="text" class="form-contact-input" OnClick="seleciona(event)"  Onchange="atualizaValvula()"  oninput="handleInput(event)" id="Fabricante" maxlength="2"   placeholder="AE"  required /> &nbsp;
+				<input type="text" class="form-contact-input" OnClick="seleciona(event)"  Onchange="atualizaAcionamento()" id="Acionamento" oninput="handleInput(event)" maxlength="2" placeholder="18" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" class="form-contact-input" OnClick="seleciona(event)"  Onchange="atualizaPolegadas()" id="Polegadas"   oninput="handleInput(event)" maxlength="2" placeholder="25" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" class="form-contact-input" OnClick="seleciona(event)"  Onchange="atualizaTipo()" id="Tipo" oninput="handleInput(event)" maxlength="1" placeholder="B" required />       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" class="form-contact-input" OnClick="seleciona(event)"  Onchange="atualizaOpcoes()" name="Opcoes"  oninput="handleInput(event)" maxlength="4" placeholder="XXXX" required />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" class="form-contact-input" OnClick="seleciona(event)"  Onchange="atualizaVoltagem()" name="Voltagem" oninput="handleInput(event)" maxlength="4" placeholder="YYYY" />
+				
+			  </form>
+			  
+			  <form action="#" class="form-contact" method="post" >
+			  	<br /><br /><br /><br /><br />
+				<input type="text" class="form-contact-input-t2"  OnClick="seleciona(event)"  Onchange="atualizaValvula2()"  oninput="handleInput(event)" id="Fabricante2"   placeholder="VÁLVULA AUTEL"  required /> &nbsp;
+				<input type="text" class="form-contact-input-t2"  OnClick="seleciona(event)"  Onchange="atualizaAcionamento2()"  oninput="handleInput(event)" id="Acionamento21"   placeholder="DE ACIONAMENTO ELÉTRICO"  required /> &nbsp;
+				<input type="text" class="form-contact-input-t2"  OnClick="seleciona(event)"  Onchange="atualizaPolegadas2()"  oninput="handleInput(event)" id="Acionamento22"   placeholder="DE SIMPLES DIAFRÁGMA"  required /> &nbsp;
+				<input type="text" class="form-contact-input-t2"  OnClick="seleciona(event)"  Onchange="atualizaTipo2()"  oninput="handleInput(event)" id="Polegadas2"   placeholder="DE 1 POLEGADA"  required /> &nbsp;
+				<input type="text" class="form-contact-input-t2"  OnClick="seleciona(event)"  Onchange="atualizaOpcoes2()"  oninput="handleInput(event)"  cols="10" id="Tipo2"   placeholder="DE CONEXÃO DE ROSCA"  required /> &nbsp;
+
+			  </form>
+			</div>
+		</body>
+	</html>

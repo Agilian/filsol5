@@ -1,0 +1,774 @@
+<html>
+
+<head>
+    <title>Calculador de volume</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf8">
+
+    <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+    <link rel="shortcut icon" href="img/ico.jpg" type="image/x-icon" />
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.js"></script>
+    <script src="js/a.js"></script>
+</head>
+
+<body style="padding-left:10%; font-family: 'Helvetica', 'Arial', sans-serif;">
+
+
+
+
+
+
+    <table style="width:50% ; padding-top: 10;">
+        <tr style=" background-color:#ffffff">
+            <td> Cliente </td>
+            <td colspan="3"> <input type="text" id="nomeCliente" style="border-radius: 10px;" class="opcionais-cliente" value="" aria-describedby="sizing-addon2" size="30"> </th>
+                <td></td>
+                <td></td>
+                <td rowspan="3"><img src="img/logo.jpg" alt="Girl in a jacket" width="200" height="70"></td>
+        </tr>
+        <tr style=" background-color:#ffffff">
+            <td> OP: </td>
+            <td><input type="text" id="nomeCliente" style="border-radius: 10px;" class="opcionais-cliente" value="" aria-describedby="sizing-addon2" size="5"> </td>
+            <td> OC: </td>
+            <td> <input type="text" id="nomeCliente" style="border-radius: 10px;" class="opcionais-cliente" value="" aria-describedby="sizing-addon2" size="5"> </td>
+        </tr>
+        <tr style=" background-color:#ffffff">
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="Linha" id="Linha" style="width:90%;">
+        <!-- RECEBE DIVS DINAMICAS -->
+        <button id='criarLinha' style=" background-color:#5C7FFF ; height: 80; font-size:30; width:80; border-width:0; border-radius: 40% 10% 40% 10%;">+</button>
+        <button id='btFinaliza' type="button" onclick="imprime()" style="background-color:#32CD32 ; height: 80; font-size:30; width:80; border-width:0 ; border-radius: 30%; display:none;"> $ </button>
+    </div>
+
+    <div style="float:left; width:100%; ">
+        <br>
+    </div>
+
+
+
+
+    <div style="float:left; width:100%">
+        <table id="principal" style="width:50% ; padding-top: 50;">
+            <tr style=" background-color:#ffffff;  ">
+                <td style=" width: 150px"> </td>
+                <td style=" width: 80px"> </td>
+                <td style=" width: 80px"> </td>
+                <td style=" width: 80px"> </td>
+            </tr>
+            </tr>
+            <tr id="Cproduto" style="display:none; ">
+                <td style="width:80px;"> Produto: </td>
+                <td style="width:80px;">
+                    <select name="produto" id="produto" onchange="selecionaProduto()" style="border-radius: 10px; width: 80px">
+                        <option value=0>-</option>
+                        <option value=1>Manga</option>
+                        <option value=2>Lona</option>
+                        <option value=3>Gaiola</option>
+                        <option value=4>KPA</option>
+                        <option value=5>Pré filtro</option>
+                        <option value=6>Manta</option>
+                    </select>
+                </td>
+            </tr>
+            <tr id="CprodutoMangaMaterial" style="display:none;">
+                <td style="width:80px;"> Material: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaMaterial" id="produtoMangaMaterial" onchange="selecionaMangaMaterial()" style="border-radius: 10px; width: 80px">
+					<option value=0>-</option>
+					<option value=1>Poliéster</option>
+					<option value=2>Nomex</option>
+					<option value=3>Fibra de Vidro</option>
+					<option value=4>Teflon</option>
+					<option value=5>Acrílico</option>
+					<option value=6>Polipropileno</option>
+				</select>
+                </td>
+            </tr>
+
+            <tr id="CprodutoMangaTratamento" style="display:none;">
+                <td style="width:80px;"> tratamento: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaTratamento" id="produtoMangaTratamento" onchange="selecionaMangaTratamento()" style="border-radius: 10px; width: 80px">
+					<option value=0>-</option>
+					<option value=1>Normal</option>
+					<option value=2>Tratado</option>
+					<option value=3>Anti-Estático</option>
+					<option value=4>Tratado e Anti-Estático ??</option>
+				</select>
+                </td>
+            </tr>
+
+
+            <tr id="CprodutoMangaGramatura" style="display:none;">
+                <td style="width:80px;"> Gramatura: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaGramatura" id="produtoMangaGramatura" onchange="selecionaMangaGramatura()" style="border-radius: 10px; width: 80px">
+					<option value=0>-</option>
+					<option value=1>350</option>
+					<option value=2>400</option>
+					<option value=3>450</option>
+					<option value=4>500</option>
+					<option value=5>550</option>
+					<option value=6>700</option>
+				</select>
+                </td>
+            </tr>
+
+
+            <tr id="CprodutoMangaQuantidade" style="display:none">
+                <td style="width:80px;"> Quantidade: </td>
+                <td style="width:80px;">
+                    <input type="text" id="produtoMangaQuantidade" onchange="selecionaMangaQuantidade()" value=0 style="border-radius: 10px;  width: 80px">
+                </td>
+            </tr>
+            <tr id="CprodutoMangaComprimento" style="display:none">
+                <td style="width:80px;"> Comprimeento: </td>
+                <td style="width:80px;">
+                    <input type="text" id="produtoMangaComprimento" onchange="selecionaMangaComprimento()" value=0 style="border-radius: 10px;  width: 80px">
+                </td>
+            </tr>
+            <tr id="CprodutoMangaDiametro" style="display:none">
+                <td style="width:80px;"> Diâmetro: </td>
+                <td style="width:80px;">
+                    <input type="text" id="produtoMangaDiametro" onchange="selecionaMangaDiametro()" value=0 style="border-radius: 10px;  width: 80px">
+                </td>
+                <td style="width:80px;"> Largura Dobrada: </td>
+                <td style="width:80px;">
+                    <input type="text" id="produtoMangaLarguraDobrada" onchange="selecionaMangaLarguraDobrada()" value=0 style="border-radius: 10px;  width: 80px">
+                </td>
+                <td style="width:80px;"> Metro Quadrado por peça: </td>
+                <td style="width:80px;">
+                    <input type="text" id="produtoMangaMetroQuadrado" onchange="selecionaMangaMetroQuadrado()" value=0 style="border-radius: 10px;  width: 80px">
+                </td>
+            </tr>
+            <tr id="CprodutoMangaColarinho" style="display:none">
+                <td style="width:80px;"> Colarinho: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaColarinho" id="produtoMangaColarinho" onchange="selecionaMangaColarinho()" style="border-radius: 10px;  width: 80px">
+				<option value=0>-</option>
+				<option value=1>Sem Colarinho</option>
+				<option value=2>Aço Mola</option>
+				<option value=3>Estilo albrás</option>
+				<option value=4>outr</option>
+				<option value=5>outro</option>
+				<option value=6>outro</option>
+			</select>
+                </td>
+            </tr>
+            <tr id="CprodutoMangaTampao" style="display:none">
+                <td style="width:80px;"> Tampão: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaTampao" id="produtoMangaTampao" onchange="selecionaMangaTampao()" style="border-radius: 10px;  width: 80px">
+				<option value=0>-</option>
+				<option value=1>Sem tampão</option>
+				<option value=2>Batido</option>
+				<option value=3>Ponto no Final</option>
+				<option value=4>Tampão Normal</option>
+				<option value=5>TampãoDuplo</option>
+				<option value=6>Colarinho na outra ponta</option>
+			</select>
+                </td>
+            </tr>
+            <tr id="CprodutoMangaReforco" style="display:none">
+                <td style="width:80px;"> Reforço: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaReforco" id="produtoMangaReforco" onchange="selecionaMangaReforco()" style="border-radius: 10px;  width: 80px">
+				<option value=0>-</option>
+				<option value=1>só na parte de cima colarinho</option>
+				<option value=2>só na parte de baixo (tampão)</option>
+				<option value=3>no meio da manga</option>
+				<option value=4>em cima embaixo</option>
+				<option value=5>sem reforço</option>
+				<option value=6>outro</option>
+			</select>
+                </td>
+            </tr>
+            <tr id="CprodutoMangaCordoalha" style="display:none">
+                <td style="width:80px;"> Cordoalha: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaCordoalha" id="produtoMangaCordoalha" onchange="selecionaMangaCordoalha()" style="border-radius: 10px;  width: 80px">
+				<option value=0>-</option>
+				<option value=1>Cobre</option>
+				<option value=2>Inox</option>
+				<option value=3>Sem cordoalha</option>
+				<option value=4>outro</option>
+			</select>
+                </td>
+            </tr>
+            <tr id="CprodutoMangaRabicho" style="display:none">
+                <td style="width:80px;"> Rabicho: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaRabicho" id="produtoMangaRabicho" onchange="selecionaMangaRabicho()" style="border-radius: 10px;  width: 80px">
+				<option value=0>-</option>
+				<option value=1>Sem Rabicho</option>
+				<option value=2>Com Rabicho</option>
+				<option value=3>outro</option>
+			</select>
+                </td>
+            </tr>
+            <tr id="CprodutoMangaRabichoTamanho" style="display:none">
+                <td style="width:80px;"> Tamanho do rabicho: </td>
+                <td style="width:80px;">
+                    <input type="text" id="produtoMangaRabichoTamanho" onchange="selecionaMangaRabichoTamanho()" value=0 style="border-radius: 10px;  width: 80px">
+                </td>
+            </tr>
+            <tr id="CprodutoMangaRabichoOlhal" style="display:none">
+                <td style="width:80px;"> olhal: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaRabichoOlhal" id="produtoMangaRabichoOlhal" onchange="selecionaMangaRabichoOlhal()" style="border-radius: 10px;  width: 80px">
+							<option value=0>-</option>
+							<option value=1>Sem olhal</option>
+							<option value=2>8 mm</option>
+							<option value=3>10 mm</option>
+							<option value=4>12 mm</option>
+						</select>
+                </td>
+            </tr>
+            <tr id="CprodutoMangaAlca" style="display:none">
+                <td style="width:80px;"> Alça: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaAlca" id="produtoMangaAlca" onchange="selecionaMangaAlca()" style="border-radius: 10px;  width: 80px">
+				<option value=0>-</option>
+				<option value=1>Sem Alça</option>
+				<option value=2>Alça no Tampão</option>
+				<option value=3>Alça no Colarinho</option>
+			</select>
+                </td>
+            </tr>
+
+            <tr id="CprodutoMangaVolume" style="display:none">
+                <td style="width:80px;"> Volume: </td>
+                <td style="width:80px;">
+                    <select name="produtoMangaVolume" id="produtoMangaVolume" onchange="selecionaMangaVolume()" style="border-radius: 10px;  width: 80px">
+				<option value=0>-</option>
+				<option value=1>batido</option>
+				<option value=2>paletizado</option>
+			</select>
+                </td>
+            </tr>
+
+        </table>
+
+
+
+    </div>
+
+
+
+    <table style="width:50% ; padding-top: 50; display:none; ">
+        <tr style=" background-color:#A9A9A9">
+            <th>...</th>
+            <th>...</th>
+            <th>...</th>
+            <th>...</th>
+            <th>...</th>
+            <th>Peso Liq</th>
+            <th>Peso Bru</th>
+            <th>Dimensão</th>
+        </tr>
+        <tr>
+            <td>Cliente</td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="nomeCliente" class="opcionais-mangas" value="" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> Numero de Mangas </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="nMangas" class="opcionais-mangas" value="11757" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> Material </td>
+            <td> <input onchange="validaMaterial()" type="text" id="materialTipo" class="opcionais-mangas" value="poliester" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> Gramatura </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="materialGramatura" class="opcionais-mangas" value="550" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> Tipo de colarinho </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="tColarinho" class="opcionais-mangas" value="aço mola" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> Largura dobrada em Milímetros </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="larguraDobrada" class="opcionais-mangas" value="250" placeholder="" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> Comprimento da Manga em milímetros</td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="tamanhoManga" class="opcionais-mangas" value="3000" placeholder="" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> Metro Quadrado Total </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="materialMetroQuadrado" class="opcionais-mangas" value="1500" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td> Amarração </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="amarracao" class="opcionais-mangas" value="4" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+
+        <tr style="color:gray">
+            <td> Quantidade de Pacotes </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="qPacotes" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="qPacotes1" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td style="color:gray"> com </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="xxxx" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="pesoLiq1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="pesoBru1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="alturaPacote1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="larguraPacote1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="comprimentoPacote1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+        </tr>
+        <tr style="color: gray">
+            <td> </td>
+            <td> </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="qPacotes2" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td style="color:gray"> com </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="yyyy" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="pesoLiq2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="pesoBru2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="alturaPacote2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="larguraPacote2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="comprimentoPacote2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9 ">
+            <td> Quantidade de pacotes por Pallet </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="qPacotesPallet" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+
+        <tr>
+            <td> Quantidade de Pallets </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="qPallets" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="qPallets1" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"></td>
+            <td style="color:gray"> com </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="aaaa" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="pesoLiq3" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="pesoBru3" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="alturaPallet1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="larguraPallet1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="comprimentoPallet1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="qPallets2" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td style="color:gray"> com </td>
+            <td> <input type="text" id="bbbb" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="pesoLiq4" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="pesoBru4" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="alturaPallet2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="larguraPallet2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+            <td> <input type="text" id="comprimentoPallet2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:gray"> </td>
+        </tr>
+    </table>
+
+
+    <table id="tabelaVolumeFinal" style=" display:none;">
+        <tr style=" display:none;">
+            <td> Quantidade de Mangas por Pacote </td>
+            <td> <input onchange="calcuclaVolume()" type="text" id="qMangasPacote" class="opcionais-mangas" value="10" style="border-radius: 10px;" aria-describedby="sizing-addon2" size="2"> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td style=" background-color:#8292eb"> P. LIQ </td>
+            <td style=" background-color:#8292eb"> P. BRU </td>
+            <td style=" background-color:#fffd98"> ALT </td>
+            <td style=" background-color:#fffd98"> LAR </td>
+            <td style=" background-color:#fffd98"> COM </td>
+        </tr>
+        <tr>
+            <td rowspan="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#6ea55d"> Volume Final </td>
+            <td rowspan="2"> <input onchange="teste()" type="text" id="volumeFinal" class="opcionais-mangas" value="" aria-describedby="sizing-addon2" size="2" style="border-radius: 10px; background-color:#6ea55d"> </td>
+            <td class="td1" rowspan="1"> <input onchange="calcuclaVolume()" type="text" id="qPalletsFinal1" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#6ea55d"></td>
+            <td class="td1" rowspan="1" style="color:rgb(0, 0, 0); background-color:#6ea55d"> com </td>
+            <td class="td1" rowspan="1"> <input type="text" id="aaaaFinal" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#6ea55d"> </td>
+            <td class="td1" rowspan="1"> <input type="text" id="pesoLiqFinal3" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0) ;border-radius: 10px; background-color:#8292eb"> </td>
+            <td class="td1" rowspan="1"> <input type="text" id="pesoBruFinal3" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0) ; border-radius: 10px; background-color:#8292eb"> </td>
+            <td class="td1" rowspan="1"> <input type="text" id="alturaPalletFinal1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#fffd98"> </td>
+            <td class="td1" rowspan="1"> <input type="text" id="larguraPalletFinal1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#fffd98"> </td>
+            <td class="td1" rowspan="1"> <input type="text" id="comprimentoPalletFinal1" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#fffd98"> </td>
+        </tr>
+        <tr>
+            <td class="td2"> <input onchange="calcuclaVolume()" type="text" id="qPalletsFinal2" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#6ea55d"> </td>
+            <td class="td2" style="color:rgb(0, 0, 0); background-color:#6ea55d"> com </td>
+            <td class="td2"> <input onchange="calcuclaVolume()" type="text" id="bbbFinal" class="opcionais-mangas" value="1" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#6ea55d"> </td>
+            <td class="td2"> <input type="text" id="pesoLiqFinal4" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#8292eb"> </td>
+            <td class="td2"> <input type="text" id="pesoBruFinal4" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#8292eb"> </td>
+            <td class="td2"> <input type="text" id="alturaPalletFinal2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#fffd98"> </td>
+            <td class="td2"> <input type="text" id="larguraPalletFinal2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0); border-radius: 10px; background-color:#fffd98"> </td>
+            <td class="td2"> <input type="text" id="comprimentoPalletFinal2" class="opcionais-mangas" value="0" aria-describedby="sizing-addon2" size="2" style="color:rgb(0, 0, 0) ; border-radius: 10px; background-color:#fffd98"> </td>
+        </tr>
+
+
+        <tr id="CprodutoMangaGuardar" style="display:none">
+            <td>
+                <button type="button" id="produtoMangaGuardar" onclick="Guardar()" style="background-color:#32CD32 ; height: 80; font-size:12; width:80; border-width:0;"> Guardar </button>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+    <table id="tabelaImpressao" style="display: none; float: left;">
+        <tr style=" background-color:#A9A9A9">
+            <td rowspan=5 style="transform: rotate(270deg)"> METAL </td>
+            <td> </td>
+            <td> manga </td>
+            <td> Colarinho </td>
+            <td> Reforço </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> dimensões </td>
+            <td> 100x10000mm </td>
+            <td> 100x10000mm </td>
+            <td> 100x10000mm </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> nº cortes </td>
+            <td> 100 </td>
+            <td> 100 </td>
+            <td> 3 </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> m² </td>
+            <td> 150 m² </td>
+            <td> 99 m² </td>
+            <td> 11 m² </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> peso </td>
+            <td> 150 kg </td>
+            <td> d....... </td>
+            <td> 33 kg </td>
+        </tr>
+        <tr></tr>
+        <tr style=" background-color:#ececec">
+            <td rowspan=5 style="transform: rotate(270deg)"> ROLOS </td>
+            <td> </td>
+            <td> manga </td>
+            <td> Colarinho </td>
+            <td> Reforço </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> dimensões </td>
+            <td> 100x10000mm </td>
+            <td> 100x10000mm </td>
+            <td> 100x10000mm </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> nº cortes </td>
+            <td> 100 </td>
+            <td> 100 </td>
+            <td> 3 </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> m² </td>
+            <td> 150 m² </td>
+            <td> 99 m² </td>
+            <td> 11 m² </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> peso </td>
+            <td> 150 kg </td>
+            <td> d....... </td>
+            <td> 33 kg </td>
+        </tr>
+        <tr> </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td rowspan=5 style="transform: rotate(270deg)"> ACESS. </td>
+            <td> </td>
+            <td> manga </td>
+            <td> Colarinho </td>
+            <td> Reforço </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> dimensões </td>
+            <td> 100x10000mm </td>
+            <td> 100x10000mm </td>
+            <td> 100x10000mm </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> nº cortes </td>
+            <td> 100 </td>
+            <td> 100 </td>
+            <td> 3 </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> m² </td>
+            <td> 150 m² </td>
+            <td> 99 m² </td>
+            <td> 11 m² </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> peso </td>
+            <td> 150 kg </td>
+            <td> d....... </td>
+            <td> 33 kg </td>
+        </tr>
+        <tr> </tr>
+        <tr style=" background-color:#ececec">
+            <td rowspan=5 style="transform: rotate(270deg)"> FECHD. </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> largura do Rolo (aberto) </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> 1º Lote: </td>
+            <td> x Mangas de </td>
+            <td> 100x10000mm </td>
+            <td> 250mm (poliéster 550</td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> 2º Lote: </td>
+            <td> y Mangas de </td>
+            <td> 100x10000mm </td>
+            <td> 250mm (poliéster 550</td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> 3º Lote: </td>
+            <td> z Mangas de </td>
+            <td> 100x10000mm </td>
+            <td> 250mm (poliéster 550</td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> 4º Lote: </td>
+            <td> x Mangas de </td>
+            <td> 100x10000mm </td>
+            <td> 250mm (poliéster 550</td>
+        </tr>
+        <tr> </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td rowspan=5 style="transform: rotate(270deg)"> COSTU. </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> Costurar: colarinho </td>
+            <td> tampão, reforço no tampão </td>
+            <td> Rabicho e cordoalha </td>
+            <td> Alça </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> peso </td>
+            <td> 150 kg </td>
+            <td> d....... </td>
+            <td> 33 kg </td>
+        </tr>
+        <tr> </tr>
+        <tr style=" background-color:#ececec">
+            <td rowspan=5 style="transform: rotate(270deg)"> EMBAL. </td>
+            <td> Check List: </td>
+            <td> cccscs </td>
+            <td> Pacotes: 30pct com 10pç </td>
+            <td> Reforço </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> Rabicho/cordoalha </td>
+            <td> Largura Dobrada: 250mm </td>
+            <td> 100x10000mm </td>
+            <td> 100x10000mm </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> Reforço / Tampão </td>
+            <td> Comprimento: 3000mm </td>
+            <td> 100 </td>
+            <td> 3 </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> Alça </td>
+            <td> 150 m² </td>
+            <td> 99 m² </td>
+            <td> 11 m² </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> peso </td>
+            <td> 150 kg </td>
+            <td> d....... </td>
+            <td> 33 kg </td>
+        </tr>
+        <tr> </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td rowspan=5 style="transform: rotate(270deg)"> APONTAM. </td>
+            <td> </td>
+            <td> pallets </td>
+            <td> pacotes </td>
+            <td> pç </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> 1º Lote com </td>
+            <td> 2 Pallets com </td>
+            <td> 32 Pacotes de </td>
+            <td> 10 peças </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> </td>
+            <td> 1 Pallet com </td>
+            <td> 28 pacotes de </td>
+            <td> 10 peças </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> 2º Lote com </td>
+            <td> 3 Pallets com </td>
+            <td> 32 Pacotes de </td>
+            <td> 10 peças </td>
+        </tr>
+        <tr style=" background-color:#A9A9A9">
+            <td> </td>
+            <td> 1 Pallet com </td>
+            <td> 28 pacotes de </td>
+            <td> 10 peças </td>
+        </tr>
+        <tr> </tr>
+        <tr style=" background-color:#ececec">
+            <td rowspan=5 style="transform: rotate(270deg)"> FATURA. </td>
+            <td> </td>
+            <td> data de Faturamento </td>
+            <td> Coleta agendada para: </td>
+            <td> Entrega previste para </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> 1º Lote </td>
+            <td> 05/07/2020 </td>
+            <td> 06/07/2020 </td>
+            <td> 09/07/2020 </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> 2º Lote </td>
+            <td> 20/07/2020 </td>
+            <td> 21/07/2020 </td>
+            <td> 24/07/2020 </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> 3º Lote </td>
+            <td> 10/08/2020 </td>
+            <td> 11/08/2020 </td>
+            <td> 24/08/2020 </td>
+        </tr>
+        <tr style=" background-color:#ececec">
+            <td> 4º Lote </td>
+            <td> 15/09/2020 </td>
+            <td> 16/09/2020 </td>
+            <td> 19/09/2020 </td>
+        </tr>
+
+    </table>
+
+    <div id="foto" style="width: 200px; height: 935px; background-color: #6ea55d; display: none; float: none;">
+
+        <img src="img/colarinho1x.png" style="width:50%; padding-left:25%; padding-top: 100px;">
+        <img src="img/corpo1.png" style="width:50%; padding-left:25%; margin-top: -13px; ">
+        <img src="img/corpo1.png" style="width:50%; padding-left:25%; margin-top: -13px; ">
+    </div>
+
+
+
+
+    <img src="img/caminhao2.png" width="500" height="500" style="display:none;">
+    <img src="img/caminhao3.png" width="500" height="700" style="display:none;">
+
+</body>
+
+</html>

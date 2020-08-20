@@ -1,0 +1,69 @@
+  função confirma completude do numero(){
+problema: quando fala numero no feminino, (ex.: 532 mangas) ele separa em 530 + "e duas"
+solução: criar função que verifica se as próximas 2 palavras sáo : "e uma" ou "e duas" (acho que não vai dar problema, mas existem centenas no feminino: "duzentAs, trezentAs")
+se houver, retorna numero formatado
+
+problema: quando fala "3,4m" geralmente falamos "3 metros e 40"
+solução: procura a palavra "metro(s)" || centimetro(s) e verifica se as proximas 2 palavras estão no formato "e +numero" || "e meio"
+}
+
+
+comando, vol, numTotalMang, tipProduto, tipMaterial, gramaturaMateri, 
+lu paletiza 30 mangas de poliester 55
+lu, eu tenho 30 mangas, de poliester 550 tratado, de 3400 mm de comprimento, de 150 de diametro com colarinho aço mola
+
+procura a palavra manga(s) ou peça(s) , o numero que tem antes  é numero de mangas
+define numero de mangas, ok
+remover essa informação do resto da frase
+
+
+
+procura a expressão "de diametro", se achar: é o numero que houver ente as duas palavras anteriores)
+ se não achar "de diametro", procura por "o diametro é"  define o proximo numero
+ define o "diametro" e a "largura dobrada"
+ exclui da frase
+ 
+procura a palavra milimetro(s), ou centimetro(s), ou metro, ou metros, ou "de comprimento"
+se existir um numero nas tres ultimas palavras anterioes é esse, senão é o proximo
+define comprimento da manga
+ 
+ 
+de forma geral:
+	se formato de frase = (contem palavra diametro, ou comprimento) (orgânica):
+			procura por "manga(s) || peça(s)" > definir produto > definir quantidade > excluir da frase
+			procurar por "poliester" || "nomex" || > definir >excluir
+			procurar por "normal" || "tratado" || "anti-estático"  >definir tratamento >excluir da frase
+			gramatura
+			quantidade
+			procurar por "de comprimento" > definir comprimento > excluir da frase
+			procurar por "de diametro" >definir diametro > excluir da frase
+			procurar por "colarinho" > definir >excluir da frase
+			************daqui pra frente é EXTRA , as informações pra paletização já completaram
+			procurar por "tampão"
+			procurar por "reforço"
+			procurar por "cordoalha"
+			procurar por rabichoe tamanho
+			olhal, alça, cordão
+			
+ 	se formato de frase for qualquer outra coisa que não for organica:
+			tentar advinhar qual numero representa o que! (no chute)
+			por exemplo, o diametro é geralmente menor que o comprimento. o numero de mangas é geralmente dito no começo da frase
+			
+			
+
+
+  
+MODO SIMPLES
+largura dobrada + diametro
+quantidade de mangas
+quantidade de mangas por pacote
+batido
+
+
+MODO NORMAL:
+largura dobrada + diametro
+quantidade de mangas
+quantidade de mangas por pacote
+gramatura
+m²
+paletizado
