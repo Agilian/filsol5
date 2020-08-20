@@ -1,64 +1,22 @@
-# Node.js & Passport Login
+# Estamos criando algo novo aqui
 
-This is a user login and registration app using Node.js, Express, Passport, Mongoose, EJS and some other packages.
+Criei três pastas originais de 3 idéias que em algum momento eu tive. Assim que der passo por aqui para acrescentar algo a mais
 
-### Version: 2.0.0
+### Versão: 1.0.0
 
-### Usage
+### Modo de uso:
 
+Pode ser usado sem internet fazendo o download dos arquivos acima
 ```sh
-$ npm install
+faça o dowload aqui
 ```
 
-```sh
-$ npm start
-# Or run with Nodemon
-$ npm run dev
 
-# Visit http://localhost:5000
+ou pode ser visto funcionando online aqui:
+```sh
+# Visite http://localhost:5000
 ```
 
-### MongoDB
+### Aos desenvolvedores
 
-Open "config/keys.js" and add your MongoDB URI, local or Atlas
-
-
-
-
-
-
-
-
-
-CRIAR TABELA DE PREÇO EDITÁVEL 
-
-SALVAR NA PASTA
-
-WHATSAPP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+o site on line está conectado com o git Hub, então as alterações serão automáticamente transferidas pra versão online. Prudência, grato.
