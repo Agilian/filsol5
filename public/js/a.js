@@ -22,3 +22,13 @@ function destaque2() {
 function destaque3() {
     document.getElementById("site3").style.backgroundColor = "gray";
 }
+
+function tiraDestaque1() {
+    document.getElementById("site1").style.backgroundColor = "gray";
+}
+function tiraDestaque2() {
+    document.getElementById("site2").style.backgroundColor = "gray";
+}
+function tiraDestaque3() {
+    document.getElementById("site3").style.backgroundColor = "gray";
+}
