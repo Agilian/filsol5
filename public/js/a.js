@@ -2,6 +2,7 @@
 
 function segueSite1() {
 console.log("oi1");
+window.location.href = "https://filsol.herokuapp.com/public/valvulas-codigos";
 }
 
 function segueSite2() {
