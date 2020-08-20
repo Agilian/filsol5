@@ -7,29 +7,3 @@
             <span id="site3" class="classeMenuzinhoDeAbas" onclick="segueSite3()">Válvulas codificações</span>
         </div>
 
-<script type="text/javascript">
-    $(document).ready(function($) {
-        $("#idData").mask("00/00/0000");
-        var SPMaskBehavior = function(val) {
-                return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-            },
-            spOptions = {
-                onKeyPress: function(val, e, field, options) {
-                    field.mask(SPMaskBehavior.apply({}, arguments), options);
-                }
-            };
-        $('#idTelefone').mask(SPMaskBehavior, spOptions);
-        $('#idCelular').mask(SPMaskBehavior, spOptions);
-        //     $("#idData").datepicker({
-        // 	dateFormat: 'dd/mm/yy',
-        // 	dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
-        // 	dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
-        // 	dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
-        // 	monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-        // 	monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
-        // 	nextText: 'Próximo',
-        // 	prevText: 'Anterior'
-        // });
-        //     $('#idData').datepicker("widget").css({"z-index":999});
-    });
-</script>
