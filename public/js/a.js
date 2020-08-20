@@ -12,3 +12,13 @@ function segueSite3() {
     window.location.href = "https://filsol.herokuapp.com/public/valvulas-codigos";
 }
         
+
+function destaque1() {
+    document.getElementById("site1").style.backgroundColor = "gray";
+}
+function destaque2() {
+    document.getElementById("site2").style.backgroundColor = "gray";
+}
+function destaque3() {
+    document.getElementById("site3").style.backgroundColor = "gray";
+}
